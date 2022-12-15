@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One CRM - Markrting,Sales Support Software | EnagageBay</title>
+</head>
+<style>
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: white;
+  font-family: Arial;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+ color: rgb(102,57,179);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Mega Menu header, if needed */
+.dropdown-content .header {
+  background: rgb(255, 255, 255);
+  padding: 16px;
+  color: rgb(0, 0, 0);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 32%;
+  padding: 10px;
+  background-color: #ccc;
+  height: 250px;
+}
+
+/* Style links inside the columns */
+.column a {
+  float: none;
+  color: rgb(255,255,255);
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a background color on hover */
+.column a:hover {
+  color: rgb(102,57,179);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button{
+    display: flex;
+    
+    flex-direction: row;
+    gap: 5px;
+      
+}
+.button>button:nth-child(1){
+background-color: rgb(102,57,179);
+color: white;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 2px;
+padding-bottom: 2px;
+border: none;
+border-radius: 2px;
+}
+.button>button:nth-child(2){
+background-color: rgb(255,115,66);
+color: white;
+padding-left: 50px;
+padding-right: 50px;
+border: none;
+padding-top: 2px;
+padding-bottom: 2px;
+border-radius: 2px;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+.toptitle{
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.subtitle{
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+
+.emailbar{
+    margin: auto;
+    display: block;
+    text-align: center;
+    height: 60px;
+    width: 540px;
+    border-radius:40px ;
+    border: 2px solid rgb(255,115,66) ;
+    
+}
+.emailbutton{
+    margin: auto;
+    display: block;
+    text-align: center;  
+    background-color: rgb(255,115,66);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+
+}
+
+.titleimg{
+    margin: auto;
+    width: 75%;
+    height: 400px;
+    
+}
+
+.brandimg{
+   
+    width: 75%;
+ 
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    
+    
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.midtitle{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.midsubtitle{
+    text-align: center;
+    font-size: 19px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: grey;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.main{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  margin: auto;
+  width: 75%;
+  gap: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.main1{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 10px;
+  
+}
+.main1sub1{
+  display: flex;
+  flex-direction:row ;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main1sub2{
+  display: flex;
+  flex-direction:column ;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main1sub3{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+#button1{
+  padding: 14px 45px;
+  background-color:rgb(102,57,179) ;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.review{
+  
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  background-color: rgb(44,79,191);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.subreview{
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------- */
+.slidemenu{
+  width: 75%;
+  margin: auto;
+}
+/* Style tab links */
+.tablink {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: rgb(0, 0, 0);
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  
+}
+
+#Marekting Software {background-color: rgb(255, 255, 255);}
+#Free CRM Features {background-color: rgb(255, 255, 255);}
+#Sales Software {background-color: rgb(255, 255, 255);}
+#Help Desk Software {background-color: rgb(255, 255, 255);}
+
+
+.slide{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.slide1{
+  display: flex;
+  flex-direction: column;
+
+}
+#slidetext{
+  font-size: 40px;
+}
+#slidetext1{
+ color: gray;
+}
+
+#button2{
+  padding: 18px 45px;
+  background-color:rgb(255, 255, 255) ;
+  color: rgb(102,57,179);
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.option{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  margin: auto;
+  gap: 15px;
+  width: 75%;
+  text-align: center;
+}
+.option>div{
+  background-color:rgb(245,247,251) ;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 30px;
+}
+</style>
+<body>
+    
+<div class="navbar">
+    <div>
+        <img src="C:\Users\Admin\Desktop\vocal-nut-3448\Images\screenbud-dd2ab828-817c-428d-8f30-c7b27bd6f91b.png" alt="logo" width="30%">
+    </div>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Products
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+       
+        <div class="row">
+          <div class="column">
+            <h3>Category 1</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <div class="column">
+            <h3>Category 2</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <div class="column">
+            <h3>Category 3</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#Pricing">Pricing</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Resources
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+         
+          <div class="row">
+            <div class="column">
+              <h3>Category 1</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+              <h3>Category 2</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            <div class="column">
+              <h3>Category 3</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="dropdown">
+        <button class="dropbtn">Free Tools
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+         
+          <div class="row">
+            <div class="column">
+              <h3>Category 1</h3>
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+            
+            
+            </div>
+          </div>
+        </div>
+
+        <a href="#Pricing">Blog</a>
+
+        <a href="#Pricing">Login</a>
+
+
+
+        <div class="button">
+            <button>Free Demo</button>
+            <button>Free Signup</button>
+        </div>
+
+        
+      </div>
+
+      <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<h1 class="toptitle">
+    Market better. Sell faster.<br>
+Support smarter
+</h1>
+<p class="subtitle">One platform for all your Marketing, Sales, and Support teams</p>
+
+
+
+    <input class="emailbar" placeholder="Your email address" type="text" >
+    <br>
+    <button class="emailbutton" >Get Started</button>
+
+
+
+<div class="titleimg">
+    <img src="https://cdn5.engagebay.com/new/assets/img/banner-image.svg" alt="titleimg">
+</div>
+
+<div class="brandimg">
+
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/p-logos/neilpatel.png" alt=""> 
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/p-logos/forbs.png" alt="">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/p-logos/inc.png" alt="">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/p-logos/enterpreneur.png" alt="">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/p-logos/techcrunch.png" alt="">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/p-logos/jeffbullas.png" alt="">
+</div>
+<div>
+    <img src=https://cdn5.engagebay.com/new/assets/img/p-logos/business.png"" alt="">
+</div>
+   
+</div>
+
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+<br><br>
+<hr width="80%">
+<h1 class="midtitle">Single Solution for All Your Activities</h1>
+
+<p class="midsubtitle">Identify new opportunities, convert visitors, deliver customer happiness, and more!</p>
+
+
+
+
+<div class="main">
+
+  <div class="main1">
+    <div class="main1sub1">
+      <div>
+        <h2>CRM Software</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, recusandae!</p>
+      </div>
+      
+      <div>
+        <img src="https://cdn5.engagebay.com/new/assets/img/icons/crm.svg" alt="img" width=65%>
+      </div>
+
+    </div>
+<hr width="95%" color="#e6e6e6" size="0.1px">
+    <div class="main1sub2">
+       
+       <div><h3>Popular Features</h3></div>
+       <div class="main1sub3">
+        <div >
+          <p>Sales Software Management</p>
+          <p>Sales Software Management</p>
+        </div>
+        <div>
+          <p>Sales Software Management</p>
+          <p>Sales Software Management</p>
+        </div>
+       </div>
+       <div><button id="button1">Get started</button></div>
+   
+     </div>
+  
+</div>
+
+<div class="main1">
+  <div class="main1sub1">
+    <div>
+      <h2>Marketing Automation</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, recusandae!</p>
+    </div>
+    
+    <div>
+      <img src="https://cdn5.engagebay.com/new/assets/img/icons/marketing-automation.svg" alt="img" width=65%>
+    </div>
+
+  </div>
+<hr width="95%" color="#e6e6e6" size="0.1px">
+  <div class="main1sub2">
+     
+     <div><h3>Popular Features</h3></div>
+     <div class="main1sub3">
+      <div >
+        <p>Sales Software Management</p>
+        <p>Sales Software Management</p>
+      </div>
+      <div>
+        <p>Sales Software Management</p>
+        <p>Sales Software Management</p>
+      </div>
+     </div>
+     <div><button id="button1">Get started</button></div>
+ 
+   </div>
+
+</div>
+
+<div class="main1">
+  <div class="main1sub1">
+    <div>
+      <h2>HelpDesk Software</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, recusandae!</p>
+    </div>
+    
+    <div>
+      <img src="https://cdn5.engagebay.com/new/assets/img/icons/helpdesk.svg" alt="img" width=65%>
+    </div>
+
+  </div>
+<hr width="95%" color="#e6e6e6" size="0.1px">
+  <div class="main1sub2">
+     
+     <div><h3>Popular Features</h3></div>
+     <div class="main1sub3">
+      <div >
+        <p>Sales Software Management</p>
+        <p>Sales Software Management</p>
+      </div>
+      <div>
+        <p>Sales Software Management</p>
+        <p>Sales Software Management</p>
+      </div>
+     </div>
+     <div><button id="button1">Get started</button></div>
+ 
+   </div>
+
+</div>
+
+<div class="main1">
+  <div class="main1sub1">
+    <div>
+      <h2>LiveChat Software</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, recusandae!</p>
+    </div>
+    
+    <div>
+      <img src="https://cdn5.engagebay.com/new/assets/img/icons/livechat.svg" alt="img" width=65%>
+    </div>
+
+  </div>
+<hr width="95%" color="#e6e6e6" size="0.1px">
+  <div class="main1sub2">
+     
+     <div><h3>Popular Features</h3></div>
+     <div class="main1sub3">
+      <div >
+        <p>Sales Software Management</p>
+        <p>Sales Software Management</p>
+      </div>
+      <div>
+        <p>Sales Software Management</p>
+        <p>Sales Software Management</p>
+      </div>
+     </div>
+     <div><button id="button1">Get started</button></div>
+ 
+   </div>
+
+</div>
+
+</div>
+
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+<div class="review">
+
+<div><h2>HAPPY CUSTOMERS SHARE GREAT REVIEWS ON G2</h2></div>
+
+<div class="subreview">
+
+  <div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/CRM_HighPerformer_AsiaPacific_HighPerformer.svg" alt="" width="85%"> 
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/CRM_HighPerformer_Europe_HighPerformer.svg" alt="" width="85%">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/CRM_HighPerformer_HighPerformer.svg" alt="" width="85%">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/CRM_HighPerformer_Small-Business_HighPerformer.svg" alt="" width="85%">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/CRM_MomentumLeader_Leader.svg" alt="" width="85%">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/EmailTracking_HighPerformer_HighPerformer.svg" alt=""width="85%">
+</div>
+<div>
+    <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/EmailTracking_HighPerformer_Mid-Market_HighPerformer.svg" alt="" width="85%">
+</div>
+<div>
+  <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/EmailTracking_HighPerformer_Small-Business_HighPerformer.svg" alt="" width="85%">
+</div>  
+<div>
+  <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/HelpDesk_EasiestAdmin_EaseOfAdmin.svg" alt=""width="85%">
+</div>  
+<div>
+  <img src="https://cdn5.engagebay.com/new/assets/img/Awards-2022/OnlineFormBuilder_FastestImplementation_Small-Business_GoLiveTime.svg" alt="" width="85%">
+</div>  
+
+
+
+
+
+</div>
+
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+<h1 class="midtitle">Create Your Own Views</h1>
+
+<p class="midsubtitle">From identifying new opportunities to delivering customer happiness</p>
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+<div class="slidemenu">
+
+  <button class="tablink" onclick="openPage('Marekting Software', this, '#6639b3')">Marekting Software</button>
+  <button class="tablink" onclick="openPage('Free CRM Features', this, '#6639b3')" id="defaultOpen">Free CRM Features</button>
+  <button class="tablink" onclick="openPage('Sales Software', this, '#6639b3')">Sales Software</button>
+  <button class="tablink" onclick="openPage('Help Desk Software', this, '#6639b3')">Help Desk Software</button>
+  
+  <div id="Marekting Software" class="tabcontent">
+    <div class="slide">
+      <div class="slide1">
+        <div class="main1sub1">
+         
+          <div>
+            <h2 id="slidetext">LiveChat Software</h2>
+
+            <hr width="95%" color="#e6e6e6" size="0.1px">
+            
+            <p id="slidetext1">With our comprehensive set of Marketing tools, including Email Marketing, Marketing Automation, Email Template Builder, Landing Page Builder, Lead Generation tools, Social Suite & more, your marketing team can take things to the next level.</p>
+          </div>
+          
+        </div>
+  
+     
+  
+        <div class="main1sub2">
+           
+           <div><h3>Popular Features</h3></div>
+           <div class="main1sub3">
+            <div >
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+            <div>
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+           </div>
+           <div><button id="button2">Explore Marketing Software</button></div>
+       
+         </div>
+      </div>
+
+      <div>
+        <img src="https://cdn5.engagebay.com/new/assets/img/tabs/home/marketing_software.png" alt="" width="100%">
+      </div>
+
+
+    </div>
+    
+    
+  </div>
+  
+  <div id="Free CRM Features" class="tabcontent">
+    <div class="slide">
+      <div class="slide1">
+        <div class="main1sub1">
+         
+          <div>
+            <h2 id="slidetext">LiveChat Software</h2>
+
+            <hr width="95%" color="#e6e6e6" size="0.1px">
+            
+            <p id="slidetext1">With our comprehensive set of Marketing tools, including Email Marketing, Marketing Automation, Email Template Builder, Landing Page Builder, Lead Generation tools, Social Suite & more, your marketing team can take things to the next level.</p>
+          </div>
+          
+        </div>
+  
+     
+  
+        <div class="main1sub2">
+           
+           <div><h3>Popular Features</h3></div>
+           <div class="main1sub3">
+            <div >
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+            <div>
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+           </div>
+           <div><button id="button2">Explore Marketing Software</button></div>
+       
+         </div>
+      </div>
+
+      <div>
+        <img src="https://cdn5.engagebay.com/new/assets/img/tabs/home/free_crm_features.png" alt="" width="100%">
+      </div>
+
+      
+    </div>
+  </div>
+  
+  <div id="Sales Software" class="tabcontent">
+    <div class="slide">
+      <div class="slide1">
+        <div class="main1sub1">
+         
+          <div>
+            <h2 id="slidetext">LiveChat Software</h2>
+
+            <hr width="95%" color="#e6e6e6" size="0.1px">
+            
+            <p id="slidetext1">With our comprehensive set of Marketing tools, including Email Marketing, Marketing Automation, Email Template Builder, Landing Page Builder, Lead Generation tools, Social Suite & more, your marketing team can take things to the next level.</p>
+          </div>
+          
+        </div>
+  
+     
+  
+        <div class="main1sub2">
+           
+           <div><h3>Popular Features</h3></div>
+           <div class="main1sub3">
+            <div >
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+            <div>
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+           </div>
+           <div><button id="button2">Explore Marketing Software</button></div>
+       
+         </div>
+      </div>
+
+      <div>
+        <img src="https://cdn5.engagebay.com/new/assets/img/tabs/home/sales_software.png" alt="" width="100%">
+      </div>
+
+      
+    </div>
+  </div>
+  
+  <div id="Help Desk Software" class="tabcontent">
+    <div class="slide">
+      <div class="slide1">
+        <div class="main1sub1">
+         
+          <div>
+            <h2 id="slidetext">LiveChat Software</h2>
+
+            <hr width="95%" color="#e6e6e6" size="0.1px">
+            
+            <p id="slidetext1">With our comprehensive set of Marketing tools, including Email Marketing, Marketing Automation, Email Template Builder, Landing Page Builder, Lead Generation tools, Social Suite & more, your marketing team can take things to the next level.</p>
+          </div>
+          
+        </div>
+  
+     
+  
+        <div class="main1sub2">
+           
+           <div><h3>Popular Features</h3></div>
+           <div class="main1sub3">
+            <div >
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+            <div>
+              <p>Sales Software Management</p>
+              <p>Sales Software Management</p>
+            </div>
+           </div>
+           <div><button id="button2">Explore Marketing Software</button></div>
+       
+         </div>
+      </div>
+
+      <div>
+        <img src="https://cdn5.engagebay.com/new/assets/img/tabs/home/helpdesk_software.png" alt="" width="100%">
+      </div>
+
+      
+    </div>
+  </div>
+  
+</div>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<h1 class="midtitle">Do It All With EngageBay</h1>
+
+<p class="midsubtitle">Stop paying thousands of dollars to dozens of marketing, sales, and support software. Experience the world's most <br>affordable, unified software. EngageBay's all-in-one CRM software is the most comprehensive solution for your<br> business.</p>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<div class="option">
+
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p> </div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+<div><img src="https://cdn5.engagebay.com/new/assets/img/icons/eb-features/automation.svg" alt="" width="40%"> <p><b>Automations</b></p></div>
+
+
+</div>
+
+
+</body>
+</html>
+<script>
+
+function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
