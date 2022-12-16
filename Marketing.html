@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing</title>
+</head>
+<style>
+    .nav{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+        padding-right: 50px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        height: 60px;
+        align-items: center;
+
+
+    }
+    #search>input{
+        width: 300px;
+        height: 20px;
+    }
+    .report{
+        padding-top: 10px;
+      display: block;
+      margin: auto;
+      text-align: center;
+    } 
+    #filter{
+        padding: 10px 20px;
+        background-color:rgb(102,57,179) ;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
+
+#container{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+    gap: 10px;
+}
+#container>div{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    display: block;
+    flex-direction: column;
+    margin: auto;
+    width: 650px;
+    
+
+}
+#container>div>img{
+   width: 100%;
+   
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
+.open-button {
+  background-color:rgb(102,57,179);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  
+  position: fixed;
+  bottom: 23px;
+  left:  28px;
+  width: 100px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 1px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: rgb(255,115,66);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: rgb(102,57,179);
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#chat{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+</style>
+<body>
+    
+<div class="nav">
+
+    <div><img src="C:\Users\Admin\Desktop\vocal-nut-3448\Images\screenbud-dd2ab828-817c-428d-8f30-c7b27bd6f91b.png" alt="" width="30%"></div>
+    <div  id="search"><input class="find" oninput="search()" type="text" placeholder="Search" ></div>
+
+
+</div>
+
+
+<div class="report"> 
+    
+    <select  id="filter">
+        <option   value="">Add Reports</option>
+        <option  value="Email Stats">Email Stats</option>
+        <option  value="Call Stats">Call Stats</option>
+        <option  value="My Contacts">My Contacts</option>
+        <option  value="Form">Form</option>
+        <option  value="Web Popups">Web Popups</option>
+        <option  value="Top Landing Pages">Top Landing Pages</option>
+        <option  value="Landing Page Performanance">Landing Page Performanance</option>
+        <option  value="Landing Pages">Landing Pages</option>
+        <option  value="Contacts Created by Day">Contacts Created by Day</option>
+        <option  value="Contacts by Source">Contacts by Source</option>
+        <option  value="Sequence List">Sequence List</option>
+
+      </select>
+
+</div>
+
+<div id="container">
+<!-- Append the Records -->
+</div>
+
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1 id="chat" >Support Team</h1>
+
+    <label id="chat" for="msg"><b>Message</b></label>
+    <textarea id="chat" placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+
+
+document.querySelector("#filter").addEventListener("change",mytodo)
+
+let todoarr=JSON.parse(localStorage.getItem("todo")) || []
+
+displaytable(todoarr)
+
+function mytodo(event){
+    event.preventDefault()
+
+    let taskname=document.querySelector("#filter").value
+    
+    let taskobj={
+        taskname
+    }
+
+    todoarr.push(taskobj)
+    localStorage.setItem("todo",JSON.stringify(todoarr))
+    
+
+
+    displaytable(todoarr)
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function displaytable(todoarr){
+
+document.querySelector("#container").innerHTML=""
+
+todoarr.forEach(function(elem,i){
+
+let tab=document.createElement("div")
+
+let title=document.createElement("h3")
+title.textContent=elem.taskname
+
+
+let del=document.createElement("button")
+del.textContent="Delete"
+del.style.backgroundColor="rgb(255,115,66)"
+del.style.color="white"
+del.style.border="None"
+del.style.padding="5px 10px"
+del.style.borderRadius="5px"
+del.style.width="100px"
+
+
+del.addEventListener("click",function(){
+    deletedata(elem,i)
+})
+
+
+let taskimg=document.createElement("img")
+taskimg.setAttribute("src","https://d2p078bqz5urf7.cloudfront.net/cloud/assets/themev2/img/no-data-images/C-14.svg")
+
+
+tab.append(title ,del,taskimg)
+
+document.querySelector("#container").append(tab)
+
+})
+
+
+
+
+}
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------------
+
+function deletedata(elem,i){
+  
+    todoarr=todoarr.filter(function(elem,index){
+  return index !== i
+  })
+   
+  displaytable(todoarr)
+  localStorage.setItem("todo",JSON.stringify(todoarr))
+  
+  }
+  
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+
+  function search(){
+ let q=document.querySelector(".find").value
+
+let newdata=todoarr.filter(function(elem){
+    return elem.taskname.toLocaleLowerCase().includes(q.toLocaleLowerCase());
+});
+
+displaytable(newdata)
+}
+
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
+
+
+</script>
